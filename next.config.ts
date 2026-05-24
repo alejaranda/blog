@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // MDX Support
+  i18n: {
+    locales: ["es", "en"],
+    defaultLocale: "en",
+  },
   transpilePackages: ["next-mdx-remote"],
 
   images: {
