@@ -37,7 +37,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${sfProDisplay.variable} ${sfMono.variable}`}>
+    <html
+      lang="es"
+      className={`${sfProDisplay.variable} ${sfMono.variable}`}
+      suppressHydrationWarning
+    >
       <body>{children}</body>
     </html>
   );
