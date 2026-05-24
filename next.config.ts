@@ -1,11 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  i18n: {
-    locales: ["es", "en"],
-    defaultLocale: "en",
-  },
-  transpilePackages: ["next-mdx-remote"],
+  transpilePackages: ["next-mdx-remote", "next-intl"],
 
   images: {
     remotePatterns: [
@@ -27,6 +23,7 @@ const nextConfig: NextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
   },
+
   compress: true,
   bundlePagesRouterDependencies: true,
 
