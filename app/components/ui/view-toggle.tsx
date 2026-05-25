@@ -15,8 +15,10 @@ export function ViewToggle({ view, onChange }: ViewToggleProps) {
         aria-pressed={view === "list"}
         aria-label="List view"
         onClick={() => onChange("list")}
-        className={`flex items-center justify-center w-7 h-7 rounded-md border-none transition-colors duration-150 ${
-          view === "list" ? "" : ""
+        className={`flex items-center justify-center w-7 h-7 rounded-md border-none transition-colors duration-200 ${
+          view === "list"
+            ? "bg-zinc-800 text-zinc-100"
+            : "bg-transparent text-zinc-500 hover:bg-zinc-900/50 hover:text-zinc-300"
         }`}
       >
         <ListIcon />
@@ -27,8 +29,10 @@ export function ViewToggle({ view, onChange }: ViewToggleProps) {
         aria-pressed={view === "compact"}
         aria-label="Compact view"
         onClick={() => onChange("compact")}
-        className={`flex items-center justify-center w-7 h-7 rounded-md border-none transition-colors duration-150 ${
-          view === "compact" ? "" : ""
+        className={`flex items-center justify-center w-7 h-7 rounded-md border-none transition-colors duration-200 ${
+          view === "compact"
+            ? "bg-zinc-800 text-zinc-100"
+            : "bg-transparent text-zinc-500 hover:bg-zinc-900/50 hover:text-zinc-300"
         }`}
       >
         <CompactIcon />
