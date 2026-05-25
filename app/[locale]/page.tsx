@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { Section } from "@/app/components/projects/section";
-import { PROJECTS } from "@/app/lib/projects";
+import { Section as ProjectSection } from "@/components/projects/section";
+import { Section as BlogSection } from "@/components/blog/section";
+import { FeaturedGallery } from "@/components/gallery/featured";
+import { PROJECTS } from "@/lib/projects";
+import { BLOG_POSTS } from "@/lib/blog";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 10 },
@@ -37,16 +40,25 @@ export default function Home() {
             <h1 className="text-4xl font-bold tracking-tight text-zinc-50">
               Alejandro
             </h1>
-            <h2 className="mt-3 mb-16 text-base text-zinc-400 font-light leading-relaxed">
+            <h2 className="mt-3 mb-6 text-base text-zinc-400 font-light leading-relaxed">
               Lorem, ipsum dolor sit amet
             </h2>
+            <FeaturedGallery />
           </motion.header>
 
           <motion.section
             variants={fadeUp}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <Section title="Latest" projects={PROJECTS} />
+            <ProjectSection title="Projects" projects={PROJECTS} />
+          </motion.section>
+
+          <motion.section
+            variants={fadeUp}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mt-20"
+          >
+            <BlogSection title="Writing" posts={BLOG_POSTS} />
           </motion.section>
         </motion.div>
       </div>

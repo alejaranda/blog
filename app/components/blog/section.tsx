@@ -1,18 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Project } from "@/lib/projects";
+import { BlogPost } from "@/app/lib/blog";
 import { ViewToggle } from "../ui/view-toggle";
 import { List } from "./list";
 
 interface SectionProps {
   title?: string;
-  projects: Project[];
+  posts: BlogPost[];
 }
 
 export function Section({
-  title = "Projects",
-  projects,
+  title = "Writing",
+  posts,
 }: SectionProps) {
   const [view, setView] = useState<"list" | "compact">("list");
 
@@ -25,7 +25,7 @@ export function Section({
         <ViewToggle view={view} onChange={setView} />
       </div>
 
-      <List projects={projects} view={view} />
+      <List posts={posts} view={view} />
     </section>
   );
 }
