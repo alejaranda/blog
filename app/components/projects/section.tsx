@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Project } from "@/app/lib/projects";
+import { Project } from "@/lib/projects";
 import { ViewToggle } from "../ui/view-toggle";
 import { List } from "./list";
 
