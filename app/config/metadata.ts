@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     default: "Alejandro Aranda",
     template: "%s",
   },
+  icons: {
+    icon: "/favicon.svg",
+  },
   description: "",
   keywords: [],
   authors: [{ name: "Alejandro" }],
