@@ -11,7 +11,7 @@ interface ListProps {
 
 export function List({ projects, view }: ListProps) {
   return (
-    <div className="flex flex-col gap-0">
+    <div className="border-t border-zinc-800 flex flex-col gap-0">
       {projects.map((project) =>
         view === "compact" ? (
           <CardCompact key={project.name} project={project} />
