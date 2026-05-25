@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { BlogPost } from "@/app/lib/blog";
+import { BlogPost } from "@/types/blog";
+import { useViewMode } from "@/hooks/use-view-mode";
 import { ViewToggle } from "../ui/view-toggle";
 import { List } from "./list";
 
@@ -14,7 +14,7 @@ export function Section({
   title = "Writing",
   posts,
 }: SectionProps) {
-  const [view, setView] = useState<"list" | "compact">("list");
+  const { view, setView } = useViewMode("list");
 
   return (
     <section>

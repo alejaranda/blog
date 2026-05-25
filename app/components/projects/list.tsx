@@ -1,6 +1,6 @@
 "use client";
 
-import { Project } from "@/lib/projects";
+import { Project } from "@/types/project";
 import { Card } from "./card";
 import { CardCompact } from "./card-compact";
 

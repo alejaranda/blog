@@ -1,10 +1,11 @@
 "use client";
 
+import { ViewMode } from "@/types/common";
 import { ListIcon, CompactIcon } from "./icons";
 
 interface ViewToggleProps {
-  view: "list" | "compact";
-  onChange: (v: "list" | "compact") => void;
+  view: ViewMode;
+  onChange: (v: ViewMode) => void;
 }
 
 export function ViewToggle({ view, onChange }: ViewToggleProps) {

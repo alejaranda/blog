@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Project } from "@/lib/projects";
+import { Project } from "@/types/project";
 
 interface CardCompactProps {
   project: Project;

@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogPost } from "@/app/lib/blog";
+import { BlogPost } from "@/types/blog";
 import { Card } from "./card";
 import { CardCompact } from "./card-compact";
 

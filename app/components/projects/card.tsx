@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "@/lib/projects";
+import { Project } from "@/types/project";
 
 interface CardProps {
   project: Project;

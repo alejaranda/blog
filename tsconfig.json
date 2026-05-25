@@ -26,7 +26,10 @@
       "@/lib/*": ["./app/lib/*"],
       "@/utils/*": ["./app/utils/*"],
       "@/styles/*": ["./app/styles/*"],
-      "@/public/*": ["./public/*"]
+      "@/public/*": ["./public/*"],
+      "@/animations/*": ["./app/animations/*"],
+      "@/hooks/*": ["./app/hooks/*"],
+      "@/types/*": ["./app/types/*"]
     }
   },
   "include": [

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BlogPost } from "@/app/lib/blog";
+import { BlogPost } from "@/types/blog";
 
 interface CardProps {
   post: BlogPost;

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GalleryImage, GALLERY_CONFIG } from "@/lib/gallery-images";
+import { GalleryImage } from "@/types/gallery";
+import { GALLERY_CONFIG } from "@/lib/gallery-images";
+import { useKeyboard } from "@/hooks/use-keyboard";
 
 interface LightboxProps {
   image: GalleryImage;
@@ -19,18 +20,12 @@ export function Lightbox({
   onPrev,
   onNext,
 }: LightboxProps) {
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") onPrev();
-      if (e.key === "ArrowRight") onNext();
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, onClose, onPrev, onNext]);
+  useKeyboard({
+    enabled: isOpen,
+    onEscape: onClose,
+    onArrowLeft: onPrev,
+    onArrowRight: onNext,
+  });
 
   return (
     <AnimatePresence>

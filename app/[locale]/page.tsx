@@ -7,20 +7,8 @@ import { Section as BlogSection } from "@/components/blog/section";
 import { FeaturedGallery } from "@/components/gallery/featured";
 import { PROJECTS } from "@/lib/projects";
 import { BLOG_POSTS } from "@/lib/blog";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0 },
-};
-
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
+import { fadeUp, container } from "@/animations/variants";
+import { ANIMATION_CONFIG } from "@/animations/config";
 
 export default function Home() {
   const t = useTranslations();
@@ -35,7 +23,7 @@ export default function Home() {
         >
           <motion.header
             variants={fadeUp}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: ANIMATION_CONFIG.duration.slow, ease: ANIMATION_CONFIG.easing.standard }}
           >
             <h1 className="text-4xl font-bold tracking-tight text-zinc-50">
               Alejandro
@@ -48,14 +36,14 @@ export default function Home() {
 
           <motion.section
             variants={fadeUp}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: ANIMATION_CONFIG.duration.slow, ease: ANIMATION_CONFIG.easing.standard }}
           >
             <ProjectSection title="Projects" projects={PROJECTS} />
           </motion.section>
 
           <motion.section
             variants={fadeUp}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: ANIMATION_CONFIG.duration.slow, ease: ANIMATION_CONFIG.easing.standard }}
             className="mt-20"
           >
             <BlogSection title="Writing" posts={BLOG_POSTS} />

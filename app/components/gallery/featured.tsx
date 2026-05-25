@@ -1,35 +1,28 @@
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { GALLERY_IMAGES, FADE_UP, IMAGE_VARIANTS, GALLERY_CONFIG } from "@/app/lib/gallery-images";
+import { GALLERY_IMAGES, FADE_UP, IMAGE_VARIANTS, GALLERY_CONFIG } from "@/lib/gallery-images";
+import { useGallery } from "@/hooks/use-gallery";
+import { useKeyboard } from "@/hooks/use-keyboard";
 import { Lightbox } from "./lightbox";
 
-function mod(n: number, m: number) {
-  return ((n % m) + m) % m;
-}
-
 export function FeaturedGallery() {
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [imageIndex, setImageIndex] = useState(0);
+  const {
+    imageIndex,
+    currentImage,
+    isLightboxOpen,
+    openLightbox,
+    closeLightbox,
+    nextImage,
+    prevImage,
+  } = useGallery({ images: GALLERY_IMAGES });
 
-  const currentImage = GALLERY_IMAGES[imageIndex];
-
-  const handleOpenLightbox = () => {
-    setIsLightboxOpen(true);
-  };
-
-  const handleCloseLightbox = () => {
-    setIsLightboxOpen(false);
-  };
-
-  const handlePrev = () => {
-    setImageIndex(mod(imageIndex - 1, GALLERY_IMAGES.length));
-  };
-
-  const handleNext = () => {
-    setImageIndex(mod(imageIndex + 1, GALLERY_IMAGES.length));
-  };
+  useKeyboard({
+    enabled: isLightboxOpen,
+    onEscape: closeLightbox,
+    onArrowLeft: prevImage,
+    onArrowRight: nextImage,
+  });
 
   return (
     <>
@@ -52,7 +45,7 @@ export function FeaturedGallery() {
               ease: GALLERY_CONFIG.imageEasing,
             }}
             className="border border-zinc-800 rounded-3xl overflow-hidden cursor-pointer group"
-            onClick={handleOpenLightbox}
+            onClick={openLightbox}
           >
             <div className="relative aspect-video bg-zinc-900">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -64,12 +57,12 @@ export function FeaturedGallery() {
                 loading="lazy"
                 draggable={false}
                 onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLImageElement).style.filter =
-                  `brightness(${GALLERY_CONFIG.imageBrightnessHover})`)
+                  ((e.currentTarget as HTMLImageElement).style.filter =
+                    `brightness(${GALLERY_CONFIG.imageBrightnessHover})`)
                 }
                 onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLImageElement).style.filter =
-                  `brightness(${GALLERY_CONFIG.imageBrightnessNormal})`)
+                  ((e.currentTarget as HTMLImageElement).style.filter =
+                    `brightness(${GALLERY_CONFIG.imageBrightnessNormal})`)
                 }
               />
             </div>
@@ -81,9 +74,9 @@ export function FeaturedGallery() {
         <Lightbox
           image={currentImage}
           isOpen={isLightboxOpen}
-          onClose={handleCloseLightbox}
-          onPrev={handlePrev}
-          onNext={handleNext}
+          onClose={closeLightbox}
+          onPrev={prevImage}
+          onNext={nextImage}
         />
       )}
     </>
