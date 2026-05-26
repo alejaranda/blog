@@ -3,9 +3,9 @@ import { notFound } from "next/navigation";
 import { metadata } from "@/config/metadata";
 import { sfProDisplay, sfMono } from "@/config/fonts";
 import "@/app/globals.css";
-import { LOCALES } from "@/app/config/constants";
-import { getMessages } from "@/app/config/i18n";
-import type { Locale } from "@/app/config/constants";
+import { LOCALES } from "@/config/constants";
+import { getMessages } from "@/config/i18n";
+import type { Locale } from "@/config/constants";
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
