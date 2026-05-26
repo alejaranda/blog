@@ -1,7 +1,33 @@
 import type { NextConfig } from "next";
+import { execSync } from "node:child_process";
+
+function getLastUpdatedDate(): string {
+  try {
+    const isoDate = execSync("git log -1 --format=%cI", {
+      encoding: "utf-8",
+    }).trim();
+
+    const date = new Date(isoDate);
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+
+    return formatter.format(date);
+  } catch {
+    return new Date().getFullYear().toString();
+  }
+}
+
+const LAST_UPDATED = getLastUpdatedDate();
 
 const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote", "next-intl"],
+
+  env: {
+    NEXT_PUBLIC_LAST_UPDATED: LAST_UPDATED,
+  },
 
   images: {
     remotePatterns: [

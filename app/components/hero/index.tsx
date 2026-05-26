@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Intro } from "./intro";
 import { SocialLinks } from "./social-links";
@@ -6,17 +8,17 @@ import { ANIMATION_CONFIG } from "@/animations/config";
 
 interface HeroProps {
   name: string;
-  subtitle: string;
+  lastUpdated: string;
 }
 
-export function Hero({ name, subtitle }: HeroProps) {
+export function Hero({ name, lastUpdated }: HeroProps) {
   return (
     <motion.header
       variants={fadeUp}
       transition={{ duration: ANIMATION_CONFIG.duration.slow, ease: ANIMATION_CONFIG.easing.standard }}
     >
       <h1 className="text-4xl font-bold tracking-tight text-zinc-50">{name}</h1>
-      <h2 className="mt-2 mb-8 text-sm font-semibold text-zinc-400 leading-relaxed">{subtitle}</h2>
+      <h2 className="mt-2 mb-8 text-sm font-semibold text-zinc-400 leading-relaxed">Updated {lastUpdated}</h2>
       <Intro />
       <SocialLinks />
     </motion.header>

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { Hero } from "@/components/hero";
 import { FeaturedGallery } from "@/components/gallery/featured";
 import { ContentSection } from "@/components/sections/content-section";
@@ -10,11 +9,10 @@ import { Section as ProjectSection } from "@/components/projects/section";
 import { Section as BlogSection } from "@/components/blog/section";
 import { PROJECTS } from "@/lib/projects";
 import { BLOG_POSTS } from "@/lib/blog";
+import { LAST_UPDATED } from "@/lib/site";
 import { container } from "@/animations/variants";
 
 export default function Home() {
-  const t = useTranslations();
-
   return (
     <Container>
       <motion.div
@@ -22,7 +20,7 @@ export default function Home() {
         initial="hidden"
         animate="show"
       >
-        <Hero name="Alejandro" subtitle="Updated" />
+        <Hero name="Alejandro" lastUpdated={LAST_UPDATED} />
         
         <FeaturedGallery />
 
