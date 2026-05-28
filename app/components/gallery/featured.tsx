@@ -8,7 +8,6 @@ import { Lightbox } from "./lightbox";
 
 export function FeaturedGallery() {
   const {
-    imageIndex,
     currentImage,
     isLightboxOpen,
     openLightbox,
@@ -40,14 +39,17 @@ export function FeaturedGallery() {
             initial="hidden"
             animate="visible"
             exit="exit"
+            className="border border-zinc-800 rounded-3xl overflow-hidden cursor-pointer group"
+            onClick={openLightbox}
+            whileTap={{ scale: 0.97 }}
             transition={{
               duration: GALLERY_CONFIG.imageTransitionDuration,
               ease: GALLERY_CONFIG.imageEasing,
             }}
-            className="border border-zinc-800 rounded-3xl overflow-hidden cursor-pointer group"
-            onClick={openLightbox}
           >
-            <div className="relative aspect-video bg-zinc-900">
+            <div
+              className="relative aspect-video bg-zinc-900"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={currentImage.src}
@@ -57,12 +59,12 @@ export function FeaturedGallery() {
                 loading="lazy"
                 draggable={false}
                 onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLImageElement).style.filter =
-                    `brightness(${GALLERY_CONFIG.imageBrightnessHover})`)
+                ((e.currentTarget as HTMLImageElement).style.filter =
+                  `brightness(${GALLERY_CONFIG.imageBrightnessHover})`)
                 }
                 onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLImageElement).style.filter =
-                    `brightness(${GALLERY_CONFIG.imageBrightnessNormal})`)
+                ((e.currentTarget as HTMLImageElement).style.filter =
+                  `brightness(${GALLERY_CONFIG.imageBrightnessNormal})`)
                 }
               />
             </div>

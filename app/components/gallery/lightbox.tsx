@@ -47,10 +47,6 @@ export function Lightbox({
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.92 }}
-            transition={{
-              ...GALLERY_CONFIG.springConfig,
-              duration: GALLERY_CONFIG.lightboxTransitionDuration,
-            }}
             onClick={(e) => e.stopPropagation()}
             className="relative rounded-4xl overflow-hidden cursor-pointer"
             style={{
@@ -68,6 +64,11 @@ export function Lightbox({
               } else {
                 onNext();
               }
+            }}
+            whileTap={{ scale: 0.90 }}
+            transition={{
+              ...GALLERY_CONFIG.springConfig,
+              duration: GALLERY_CONFIG.lightboxTransitionDuration,
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
