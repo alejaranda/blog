@@ -6,7 +6,7 @@ import { FeaturedGallery } from "@/components/gallery/featured";
 import { ContentSection } from "@/components/sections/content-section";
 import { Container } from "@/components/sections/container";
 import { Footer } from "@/app/components/footer/footer";
-import { Section as CombinedSection } from "@/components/combined/section";
+import { Section as WorkSection } from "@/components/work/section";
 import { PROJECTS } from "@/lib/projects";
 import { BLOG_POSTS } from "@/lib/blog";
 import { LAST_UPDATED } from "@/lib/site";
@@ -25,7 +25,7 @@ export default function Home() {
         <FeaturedGallery />
 
         <ContentSection>
-          <CombinedSection projects={PROJECTS} posts={BLOG_POSTS} />
+          <WorkSection projects={PROJECTS} posts={BLOG_POSTS} />
         </ContentSection>
       </motion.div>
 
