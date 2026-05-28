@@ -23,3 +23,22 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
 }
+
+@keyframes eq {
+
+  0%,
+  100% {
+    transform: scaleY(0.25);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.eq-bar {
+  animation-name: eq;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
