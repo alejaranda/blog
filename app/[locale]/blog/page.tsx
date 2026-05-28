@@ -1,45 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { Container } from "@/components/sections/container";
-import { ContentSection } from "@/components/sections/content-section";
-import { Footer } from "@/app/components/footer/footer";
-import { List } from "@/components/shared/list";
-import { BLOG_POSTS } from "@/lib/blog";
-import { container } from "@/animations/variants";
+import { getAllPosts } from "@/lib/mdx";
+import { BlogList } from "./blog-list";
 
 export default function BlogPage() {
-  return (
-    <Container>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
-        <div className="mb-10 pt-5">
-          <Link
-            href="/"
-            className="text-xs font-semibold font-mono text-zinc-400 uppercase tracking-widest hover:text-zinc-300 transition-colors mb-6 inline-block"
-          >
-            ← Back
-          </Link>
-          <h1 className="text-4xl font-light tracking-tight text-zinc-100 mb-2">
-            Writing
-          </h1>
-          <p className="text-zinc-400">
-            Lorem ipsum dolor sit
-          </p>
-        </div>
-
-        <ContentSection>
-          <List type="blog" items={BLOG_POSTS} view="list" />
-        </ContentSection>
-      </motion.div>
-
-      <div className="border-t border-neutral-800 mt-8">
-        <Footer />
-      </div>
-    </Container>
-  );
+  const posts = getAllPosts();
+  return <BlogList posts={posts} />;
 }

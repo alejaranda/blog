@@ -12,5 +12,26 @@ export const GALLERY_IMAGES: GalleryImage[] = [
     alt: "Santana",
     label: "Project",
     year: "2026",
+  },
+  {
+    id: 2,
+    src: "/logos/TEO.jpg",
+    alt: "Teo",
+    label: "Dog",
+    year: "2026",
+  },
+  {
+    id: 3,
+    src: "/logos/uni.png",
+    alt: "Auto",
+    label: "Universidad",
+    year: "2026",
+  },
+  {
+    id: 4,
+    src: "/logos/teo2.jpg",
+    alt: "Teo",
+    label: "Dog",
+    year: "2026",
   }
 ];

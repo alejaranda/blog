@@ -54,10 +54,10 @@ export function SpotifySection() {
       </div>
 
       <div className="flex flex-col gap-0.5 min-w-0 max-w-45">
-        <span className="text-[12px] font-medium text-zinc-100 leading-none truncate">
+        <span className="text-xs font-medium text-zinc-100 leading-none truncate">
           {track.title}
         </span>
-        <span className="text-[11px] text-zinc-400 leading-none truncate">
+        <span className="text-xs text-zinc-400 leading-none truncate">
           {track.artist}
         </span>
       </div>
