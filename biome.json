@@ -1,0 +1,105 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!.turbo",
+      "!.vercel",
+      "!.swc",
+      "!dist",
+      "!build",
+      "!coverage",
+      "!playwright-report",
+      "!test-results"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "lineEnding": "lf"
+  },
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "react": "recommended",
+      "next": "recommended"
+    },
+    "rules": {
+      "recommended": true,
+      "nursery": {
+        "recommended": true
+      },
+      "style": {
+        "useImportType": {
+          "level": "error",
+          "options": {
+            "style": "separatedType"
+          }
+        },
+        "useNodejsImportProtocol": "error"
+      },
+      "correctness": {
+        "noUnusedImports": "error"
+      },
+      "performance": {
+        "noImgElement": "error"
+      },
+      "suspicious": {
+        "noConsole": "warn",
+        "noDebugger": "error",
+        "noUnknownAtRules": "off"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "jsxQuoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all",
+      "arrowParentheses": "always"
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "identifierOrder": "natural",
+            "groups": [
+              [":URL:"],
+              [":NODE:"],
+              ":BLANK_LINE:",
+              ["react", "react/**", "next", "next/**"],
+              ":BLANK_LINE:",
+              [":PACKAGE:", "!:ALIAS:"],
+              ":BLANK_LINE:",
+              ["@/app/**", ":ALIAS:"],
+              ":BLANK_LINE:",
+              [":PATH:", "!:STYLE:"],
+              ":BLANK_LINE:",
+              [":STYLE:"]
+            ]
+          }
+        }
+      }
+    }
+  }
+}
