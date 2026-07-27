@@ -1,7 +1,11 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "project": ["app/**/*.{ts,tsx}", "app/**/*.css"],
-  "ignore": ["**/*.d.ts"],
+  "project": [
+    "app/**/*.{ts,tsx}",
+    "app/**/*.css",
+    "i18n/**/*.ts",
+    "shared/**/*.{ts,tsx}"
+  ],
   "ignoreExportsUsedInFile": true,
   "rules": {
     "files": "error",

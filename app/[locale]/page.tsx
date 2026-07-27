@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from "@/shared/ui/theme-switcher";
 import { useTranslations } from "next-intl";
 
 export default function HomePage() {
@@ -6,6 +7,7 @@ export default function HomePage() {
   return (
     <main>
       <h1>{t("title")}</h1>
+      <ThemeSwitcher />
     </main>
   );
 }
