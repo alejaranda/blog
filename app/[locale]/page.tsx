@@ -1,13 +1,5 @@
-import { ThemeSwitcher } from "@/shared/ui/theme-switcher";
-import { useTranslations } from "next-intl";
+import { HomePage } from "@/domains/home/view";
 
-export default function HomePage() {
-  const t = useTranslations("home");
-
-  return (
-    <main>
-      <h1>{t("title")}</h1>
-      <ThemeSwitcher />
-    </main>
-  );
+export default function Page() {
+  return <HomePage />;
 }

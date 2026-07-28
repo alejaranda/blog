@@ -4,13 +4,7 @@ import type { PropsWithChildren } from "react";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
-export const THEMES = [
-  "light",
-  "dark",
-  "dracula",
-  "forest",
-  "sepia",
-] as const;
+export const THEMES = ["light", "dark", "dracula", "forest", "sepia"] as const;
 
 export function ThemeProvider({ children }: PropsWithChildren) {
   return (
