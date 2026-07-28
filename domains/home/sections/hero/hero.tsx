@@ -1,5 +1,4 @@
 import { build } from "../../data/build";
-
 import { BuildBadge } from "./build-badge";
 import { HeroTitle } from "./hero-title";
 

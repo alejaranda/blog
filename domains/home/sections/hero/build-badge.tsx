@@ -1,8 +1,9 @@
 "use client";
-import { cn } from "@/shared/lib/cn";
+
 import { Clock3, GitBranch, GitCommit, Radio } from "lucide-react";
 import { useLocale } from "next-intl";
 
+import { cn } from "@/shared/lib/cn";
 import { Chip } from "@/shared/ui/chip";
 
 import { BUILD_STATUS } from "./build-badge.constants";

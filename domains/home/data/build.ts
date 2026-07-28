@@ -1,7 +1,11 @@
 import { execSync } from "node:child_process";
 
-import pkg from "../../../package.json";
+import pkg from "@/package.json";
+
 import type { BuildInfo } from "./build.types";
+
+const GIT_COMMIT_COMMAND = "git rev-parse HEAD";
+const GIT_BRANCH_COMMAND = "git rev-parse --abbrev-ref HEAD";
 
 function safeExec(command: string, fallback: string): string {
   try {
@@ -11,10 +15,9 @@ function safeExec(command: string, fallback: string): string {
   }
 }
 
-const commit = process.env["VERCEL_GIT_COMMIT_SHA"] ?? safeExec("git rev-parse HEAD", "unknown");
+const commit = process.env.VERCEL_GIT_COMMIT_SHA ?? safeExec(GIT_COMMIT_COMMAND, "unknown");
 
-const branch =
-  process.env["VERCEL_GIT_COMMIT_REF"] ?? safeExec("git rev-parse --abbrev-ref HEAD", "unknown");
+const branch = process.env.VERCEL_GIT_COMMIT_REF ?? safeExec(GIT_BRANCH_COMMAND, "unknown");
 
 export const build: BuildInfo = {
   version: pkg.version,
