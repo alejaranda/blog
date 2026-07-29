@@ -1,4 +1,7 @@
 {
+  "hero": {
+    "name": "Alejandro"
+  },
   "introduction": {
     "description": "Explorando ideas y persiguiendo preguntas más grandes de las que probablemente debería. Comparto lo que aprendo a través de proyectos, comunidad y código abierto porque el conocimiento crece cuando se comparte.",
     "about": "Actualmente estudiando, construyendo Santana, y, como cada noche, intentando conquistar el mundo."

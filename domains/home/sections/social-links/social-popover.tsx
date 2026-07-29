@@ -37,22 +37,18 @@ export function SocialPopover({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg shadow-neutral-900/10">
+      <div className="overflow-hidden rounded-lg border border-border bg-surface shadow-lg shadow-fg/10">
         <div className="flex items-stretch">
           <button
             type="button"
             onClick={() => window.open(href, "_blank", "noopener,noreferrer")}
-            className={cn(
-              socialActionClass,
-              "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900",
-            )}
+            className={cn(socialActionClass, "text-muted hover:bg-bg hover:text-fg")}
           >
             <ExternalLink className="size-3 shrink-0" />
-
             <span className="lowercase">{t("actions.open")}</span>
           </button>
 
-          <div aria-hidden="true" className="my-1 w-px bg-neutral-200" />
+          <div aria-hidden="true" className="my-1 w-px bg-border" />
 
           <button
             type="button"
@@ -60,17 +56,14 @@ export function SocialPopover({
             aria-live="polite"
             className={cn(
               socialActionClass,
-              copied
-                ? "bg-emerald-50 text-emerald-700"
-                : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900",
+              copied ? "bg-success/10 text-success" : "text-muted hover:bg-bg hover:text-fg",
             )}
           >
             {copied ? (
-              <Check className="size-3 shrink-0 text-emerald-600" />
+              <Check className="size-3 shrink-0 text-success" />
             ) : (
               <Copy className="size-3 shrink-0" />
             )}
-
             <span className="lowercase">{copied ? t("actions.copied") : t("actions.copy")}</span>
           </button>
         </div>

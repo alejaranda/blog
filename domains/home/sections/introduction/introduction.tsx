@@ -1,12 +1,15 @@
 import { useTranslations } from "next-intl";
 
+import { FadeIn } from "@/shared/motion/components/fade-in";
+import { StaggerGroup } from "@/shared/motion/components/stagger-group";
+
 export function Introduction() {
   const t = useTranslations("home.introduction");
 
   return (
-    <section className="mb-3 mt-8 space-y-4 text-base leading-relaxed text-neutral-600">
-      <p>{t("description")}</p>
-      <p>{t("about")}</p>
-    </section>
+    <StaggerGroup as="section" className="mb-3 mt-8 space-y-4 leading-relaxed text-fg">
+      <FadeIn as="p">{t("description")}</FadeIn>
+      <FadeIn as="p">{t("about")}</FadeIn>
+    </StaggerGroup>
   );
 }

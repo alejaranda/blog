@@ -2,10 +2,10 @@ import { cn } from "@/shared/lib/cn";
 
 export const socialLinkClass = cn(
   "-mx-1 inline-flex items-center rounded-md px-1",
-  "text-sm text-neutral-900",
-  "underline decoration-neutral-300 underline-offset-4",
+  "text-sm text-muted",
+  "underline decoration-border underline-offset-4",
   "transition-colors duration-200",
-  "hover:decoration-neutral-800",
+  "hover:decoration-fg",
   "active:opacity-70",
 );
 
