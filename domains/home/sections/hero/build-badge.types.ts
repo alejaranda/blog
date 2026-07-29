@@ -1,1 +1,1 @@
-export type { BuildInfo, BuildStatus } from "../../data/build.types";
+export type { BuildInfo, BuildStatus } from "../../content/build.types";

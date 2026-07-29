@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
 export function Introduction() {
-  const t = useTranslations("home");
+  const t = useTranslations("home.introduction");
 
   return (
     <section className="mb-3 mt-8 space-y-4 text-base leading-relaxed text-neutral-600">

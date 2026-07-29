@@ -1,30 +1,15 @@
-import type { LucideIcon } from "lucide-react";
-import { PackageCheck, PackageMinus, PackageX } from "lucide-react";
+import { AlertCircle, GitBranch, GitCommit, Tag } from "lucide-react";
 
-import type { ChipColor } from "@/shared/ui/chip";
+export const BUILD_CHIP_CLASS = {
+  version: "border-neutral-200 bg-neutral-50 text-neutral-700",
+  commit: "border-sky-200 bg-sky-50 text-sky-700",
+  branch: "border-violet-200 bg-violet-50 text-violet-700",
+  dirty: "border-amber-200 bg-amber-50 text-amber-700",
+} as const;
 
-import type { BuildStatus } from "./build-badge.types";
-
-interface BuildStatusStyle {
-  chipColor: ChipColor;
-  textClass: string;
-  Icon: LucideIcon;
-}
-
-export const BUILD_STATUS: Record<BuildStatus, BuildStatusStyle> = {
-  deployed: {
-    chipColor: "emerald",
-    textClass: "text-emerald-600",
-    Icon: PackageCheck,
-  },
-  building: {
-    chipColor: "amber",
-    textClass: "text-amber-600",
-    Icon: PackageMinus,
-  },
-  failed: {
-    chipColor: "rose",
-    textClass: "text-rose-600",
-    Icon: PackageX,
-  },
-};
+export const BUILD_ICONS = {
+  version: Tag,
+  commit: GitCommit,
+  branch: GitBranch,
+  dirty: AlertCircle,
+} as const;

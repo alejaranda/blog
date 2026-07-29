@@ -1,14 +1,11 @@
 "use client";
 
-import { Clock3, GitBranch, GitCommit, Radio } from "lucide-react";
-import { useLocale } from "next-intl";
-
 import { cn } from "@/shared/lib/cn";
 import { Chip } from "@/shared/ui/chip";
 
-import { BUILD_STATUS } from "./build-badge.constants";
+import { BUILD_CHIP_CLASS, BUILD_ICONS } from "./build-badge.constants";
 import type { BuildInfo } from "./build-badge.types";
-import { formatBuildDate, shortBranchName } from "./build-badge.utils";
+import { shortBranchName } from "./build-badge.utils";
 
 interface BuildBadgeProps {
   build: BuildInfo;
@@ -21,47 +18,50 @@ const tooltipPosition = cn(
 );
 
 const tooltipClassName = cn(
-  "z-50 flex w-max flex-col items-stretch gap-1.5",
-  "sm:flex-row sm:flex-nowrap sm:items-center",
+  "z-50 flex w-max items-center gap-2",
   "pointer-events-none opacity-0 transition-all duration-200",
   "group-hover:pointer-events-auto group-hover:opacity-100",
   "group-focus-within:pointer-events-auto group-focus-within:opacity-100",
 );
 
 export function BuildBadge({ build }: BuildBadgeProps) {
-  const locale = useLocale();
-
-  const { Icon, chipColor, textClass } = BUILD_STATUS[build.status];
+  const VersionIcon = BUILD_ICONS.version;
+  const CommitIcon = BUILD_ICONS.commit;
+  const BranchIcon = BUILD_ICONS.branch;
+  const DirtyIcon = BUILD_ICONS.dirty;
 
   return (
     <button
       type="button"
       aria-describedby="build-tooltip"
-      className="group relative inline-flex cursor-default font-mono text-xs text-neutral-500"
+      className="group relative inline-flex cursor-default"
     >
-      <span className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 px-2.5 py-1 transition-colors group-hover:border-neutral-300 group-focus-within:border-neutral-300">
-        <Icon className={`size-3 ${textClass}`} />
-        <span>v{build.version}</span>
-      </span>
+      <Chip className={BUILD_CHIP_CLASS.version} icon={<VersionIcon className="size-3" />}>
+        v{build.version}
+      </Chip>
 
       <div id="build-tooltip" role="tooltip" className={cn(tooltipPosition, tooltipClassName)}>
-        <Chip color="sky" icon={<GitCommit className="size-3" />}>
+        <Chip
+          className={BUILD_CHIP_CLASS.commit}
+          icon={<CommitIcon className="size-3" />}
+          title={build.commit}
+        >
           {build.commit.slice(0, 7)}
         </Chip>
 
-        <Chip color="violet" icon={<GitBranch className="size-3" />} title={build.branch}>
-          <span className="inline-block max-w-40 truncate sm:max-w-45">
-            {shortBranchName(build.branch)}
-          </span>
+        <Chip
+          className={BUILD_CHIP_CLASS.branch}
+          icon={<BranchIcon className="size-3" />}
+          title={build.branch}
+        >
+          {shortBranchName(build.branch)}
         </Chip>
 
-        <Chip color="neutral" icon={<Clock3 className="size-3" />}>
-          {formatBuildDate(build.date, locale)}
-        </Chip>
-
-        <Chip color={chipColor} icon={<Radio className="size-3" />}>
-          <span className="capitalize">{build.status}</span>
-        </Chip>
+        {build.dirty && (
+          <Chip className={BUILD_CHIP_CLASS.dirty} icon={<DirtyIcon className="size-3" />}>
+            Dirty
+          </Chip>
+        )}
       </div>
     </button>
   );
