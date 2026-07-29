@@ -11,6 +11,6 @@ export const socialLinkClass = cn(
 
 export const socialActionClass = cn(
   "flex h-8 min-w-20 items-center justify-center gap-1.5 px-3",
-  "text-xs font-medium tracking-tight",
+  "text-xs tracking-tight",
   "transition-colors duration-150",
 );
