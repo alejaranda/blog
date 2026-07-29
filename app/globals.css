@@ -1,37 +1,75 @@
 @import "tailwindcss";
 
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-fg: var(--color-fg);
+  --color-accent: var(--color-accent);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-surface: var(--color-surface);
+  --color-danger: var(--color-danger);
+  --font-sans: var(--font-sf-pro);
+  --font-mono: var(--font-sf-mono);
+}
+
 :root,
 [data-theme="light"] {
   --color-bg: #ffffff;
   --color-fg: #111111;
   --color-accent: #2563eb;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-surface: #f9fafb;
+  --color-danger: #dc2626;
+  color-scheme: light;
 }
 
 [data-theme="dark"] {
   --color-bg: #0a0a0a;
   --color-fg: #f5f5f5;
   --color-accent: #60a5fa;
+  --color-muted: #9ca3af;
+  --color-border: #27272a;
+  --color-surface: #171717;
+  --color-danger: #f87171;
+  color-scheme: dark;
 }
 
 [data-theme="dracula"] {
   --color-bg: #282a36;
   --color-fg: #f8f8f2;
   --color-accent: #bd93f9;
+  --color-muted: #6272a4;
+  --color-border: #44475a;
+  --color-surface: #343746;
+  --color-danger: #ff5555;
+  color-scheme: dark;
 }
 
 [data-theme="forest"] {
   --color-bg: #0d1b12;
   --color-fg: #d9f2e6;
   --color-accent: #34d399;
+  --color-muted: #6b9080;
+  --color-border: #1e3a2b;
+  --color-surface: #142a1c;
+  --color-danger: #f87171;
+  color-scheme: dark;
 }
 
 [data-theme="sepia"] {
   --color-bg: #f4ecd8;
   --color-fg: #2b241a;
   --color-accent: #b45309;
+  --color-muted: #8a7f68;
+  --color-border: #ddd0b3;
+  --color-surface: #ece0c6;
+  --color-danger: #b91c1c;
+  color-scheme: light;
 }
 
 body {
+  font-family: var(--font-sans);
   background: var(--color-bg);
   color: var(--color-fg);
 }
