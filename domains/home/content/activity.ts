@@ -15,7 +15,4 @@ export type ActivityCategory = (typeof ACTIVITY_CATEGORIES)[number];
 
 export type ActivityCategoryId = ActivityCategory["id"];
 
-export type ActivityItemsByCategory = Record<
-  ActivityCategoryId,
-  ContentItem[]
->;
+export type ActivityItemsByCategory = Record<ActivityCategoryId, ContentItem[]>;

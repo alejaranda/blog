@@ -1,5 +1,10 @@
 {
   "title": "Writing",
   "description": "My articles and writing posts.",
-  "empty": "No results found."
+  "empty": "No results found.",
+  "actions": {
+    "back": "Back",
+    "copy": "Copy",
+    "copied": "Copied"
+  }
 }

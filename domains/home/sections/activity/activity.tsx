@@ -6,10 +6,8 @@ import { useTranslations } from "next-intl";
 
 import { ContentList } from "@/shared/ui/content-list";
 
-import {
-  ACTIVITY_CATEGORIES,
-  type ActivityItemsByCategory,
-} from "../../content/activity";
+import type { ActivityItemsByCategory } from "../../content/activity";
+import { ACTIVITY_CATEGORIES } from "../../content/activity";
 
 type Props = {
   itemsByCategory: ActivityItemsByCategory;

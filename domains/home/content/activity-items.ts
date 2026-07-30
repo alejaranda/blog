@@ -4,9 +4,7 @@ import type { ContentItem } from "@/shared/ui/content-list";
 
 import type { ActivityItemsByCategory } from "./activity";
 
-export function buildActivityItemsByCategory(
-  writing: ContentItem[],
-): ActivityItemsByCategory {
+export function buildActivityItemsByCategory(writing: ContentItem[]): ActivityItemsByCategory {
   return {
     projects,
     writing,
