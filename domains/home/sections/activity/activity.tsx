@@ -1,25 +1,37 @@
 "use client";
 
+import { useMemo } from "react";
+
 import { useTranslations } from "next-intl";
 
-import { ContentList } from "@/shared/ui/content-list/";
+import { ContentList } from "@/shared/ui/content-list";
 
-import { activityItemsByCategory } from "../../content/activity";
-import { ACTIVITY_CATEGORY_HREFS, ACTIVITY_CATEGORY_IDS } from "../../content/activity.types";
+import {
+  ACTIVITY_CATEGORIES,
+  type ActivityItemsByCategory,
+} from "../../content/activity";
 
-export function Activity() {
+type Props = {
+  itemsByCategory: ActivityItemsByCategory;
+};
+
+export function Activity({ itemsByCategory }: Props) {
   const t = useTranslations("home.categories");
 
-  const categories = ACTIVITY_CATEGORY_IDS.map((id) => ({
-    id,
-    label: t(id),
-    href: ACTIVITY_CATEGORY_HREFS[id],
-  }));
+  const categories = useMemo(
+    () =>
+      ACTIVITY_CATEGORIES.map(({ id, href }) => ({
+        id,
+        href,
+        label: t(id),
+      })),
+    [t],
+  );
 
   return (
     <ContentList
       categories={categories}
-      itemsByCategory={activityItemsByCategory}
+      itemsByCategory={itemsByCategory}
       defaultCategory="projects"
     />
   );

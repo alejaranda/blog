@@ -1,4 +1,3 @@
-// domains/projects/view.tsx
 "use client";
 
 import { useTranslations } from "next-intl";
