@@ -1,17 +1,15 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-
 import { SearchX } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { useSearchFilter } from "@/shared/hooks/use-search-filter";
 import { FadeIn } from "@/shared/motion/components/fade-in";
 import { StaggerGroup } from "@/shared/motion/components/stagger-group";
+import type { ContentItem } from "@/shared/ui/content-list";
 import { ContentItem as ContentItemComponent } from "@/shared/ui/content-list/content-item";
 
 import { ListPageHeader } from "./internal/list-page-header";
-
-import type { ContentItem } from "@/shared/ui/content-list";
 
 type ListPageProps = {
   title: string;
@@ -22,10 +20,11 @@ type ListPageProps = {
 
 export function ListPage({ title, description, emptyLabel, items }: ListPageProps) {
   const t = useTranslations("shared.listPage");
-  const { search, setSearch, filtered, debouncedSearch } = useSearchFilter(
-    items,
-    ["title", "description", "tags"],
-  );
+  const { search, setSearch, filtered, debouncedSearch } = useSearchFilter(items, [
+    "title",
+    "description",
+    "tags",
+  ]);
 
   return (
     <div className="mx-auto flex w-full max-w-xl flex-1 flex-col px-6 py-20">

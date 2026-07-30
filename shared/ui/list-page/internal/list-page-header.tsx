@@ -6,6 +6,7 @@ import { ArrowLeft, Search, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
+
 import { DividerReveal } from "@/shared/motion/components/divider-reveal";
 
 type ListPageHeaderProps = {
