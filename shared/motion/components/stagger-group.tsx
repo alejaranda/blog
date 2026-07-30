@@ -10,12 +10,14 @@ import { MOTION_TAGS } from "./motion-tag";
 
 type StaggerGroupProps = {
   as?: MotionTagName;
+  animate?: "view" | "mount";
   className?: string;
   children: ReactNode;
 } & StaggerOptions;
 
 export function StaggerGroup({
   as = "div",
+  animate = "view",
   delayChildren,
   staggerChildren,
   className,
@@ -23,22 +25,27 @@ export function StaggerGroup({
 }: StaggerGroupProps) {
   const MotionTag = MOTION_TAGS[as];
 
-  return (
-    <MotionTag
-      initial="hidden"
-      whileInView="show"
-      viewport={inView}
-      variants={staggerContainer({
-        ...(delayChildren !== undefined && {
-          delayChildren,
-        }),
+  const variants = staggerContainer({
+    ...(delayChildren !== undefined && {
+      delayChildren,
+    }),
+    ...(staggerChildren !== undefined && {
+      staggerChildren,
+    }),
+  });
 
-        ...(staggerChildren !== undefined && {
-          staggerChildren,
-        }),
-      })}
-      className={className}
-    >
+  const animationProps =
+    animate === "mount"
+      ? {
+          animate: "show" as const,
+        }
+      : {
+          whileInView: "show" as const,
+          viewport: inView,
+        };
+
+  return (
+    <MotionTag initial="hidden" variants={variants} className={className} {...animationProps}>
       {children}
     </MotionTag>
   );

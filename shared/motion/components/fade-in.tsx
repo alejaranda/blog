@@ -9,6 +9,7 @@ import { MOTION_TAGS } from "./motion-tag";
 
 type FadeInProps = {
   as?: MotionTagName;
+  animate?: "view" | "mount";
   y?: number;
   delay?: number;
   duration?: number;
@@ -16,7 +17,15 @@ type FadeInProps = {
   children: ReactNode;
 };
 
-export function FadeIn({ as = "div", y, delay, duration, className, children }: FadeInProps) {
+export function FadeIn({
+  as = "div",
+  animate = "view",
+  y,
+  delay,
+  duration,
+  className,
+  children,
+}: FadeInProps) {
   const MotionTag = MOTION_TAGS[as];
 
   const variants = useEntranceVariants({
@@ -25,14 +34,18 @@ export function FadeIn({ as = "div", y, delay, duration, className, children }: 
     ...(duration !== undefined && { duration }),
   });
 
+  const animationProps =
+    animate === "mount"
+      ? {
+          animate: "show" as const,
+        }
+      : {
+          whileInView: "show" as const,
+          viewport: inView,
+        };
+
   return (
-    <MotionTag
-      initial="hidden"
-      whileInView="show"
-      viewport={inView}
-      variants={variants}
-      className={className}
-    >
+    <MotionTag initial="hidden" variants={variants} className={className} {...animationProps}>
       {children}
     </MotionTag>
   );
