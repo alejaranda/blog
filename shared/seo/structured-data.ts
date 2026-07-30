@@ -1,6 +1,6 @@
-import type { JsonObject } from "@/shared/ui/json-ld";
+import type { JsonObject } from "@/shared/seo/json-ld";
 
-import { site } from "./site";
+import { site } from "../../config/site";
 
 export const personJsonLd: JsonObject = {
   "@context": "https://schema.org",
