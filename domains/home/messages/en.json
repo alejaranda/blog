@@ -16,5 +16,9 @@
       "copy": "copy",
       "copied": "copied"
     }
+  },
+  "categories": {
+    "projects": "Projects",
+    "writing": "Writing"
   }
 }

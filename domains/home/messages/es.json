@@ -16,5 +16,9 @@
       "copy": "copiar",
       "copied": "copiado"
     }
+  },
+  "categories": {
+    "projects": "Proyectos",
+    "writing": "Escritura"
   }
 }
