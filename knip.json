@@ -1,8 +1,17 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "entry": ["app/**/*.{ts,tsx}"],
-  "project": ["app/**/*.{ts,tsx}", "domains/**/*.{ts,tsx}", "shared/**/*.{ts,tsx}", "i18n/**/*.ts"],
-  "ignoreDependencies": ["tailwindcss"],
+  "entry": [
+    "app/**/*.{ts,tsx}"
+  ],
+  "project": [
+    "app/**/*.{ts,tsx}",
+    "domains/**/*.{ts,tsx}",
+    "shared/**/*.{ts,tsx}",
+    "i18n/**/*.ts"
+  ],
+  "ignoreDependencies": [
+    "tailwindcss"
+  ],
   "ignoreExportsUsedInFile": true,
   "rules": {
     "files": "error",
@@ -13,5 +22,7 @@
     "types": "warn",
     "duplicates": "warn"
   },
-  "ignore": ["i18n/navigation.ts", "shared/ui/theme-switcher.tsx"]
+  "ignore": [
+    "shared/ui/theme-switcher.tsx"
+  ]
 }

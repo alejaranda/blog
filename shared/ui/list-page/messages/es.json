@@ -1,0 +1,7 @@
+{
+  "back": "Volver",
+  "searchLabel": "Buscar",
+  "searchPlaceholder": "Buscar...",
+  "clearLabel": "Limpiar búsqueda",
+  "noMatchFor": "Sin resultados para \"{query}\""
+}

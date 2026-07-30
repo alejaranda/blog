@@ -1,7 +1,7 @@
 "use client";
 
-import { FadeIn } from "@/shared/motion/components/fade-in";
 import { useCurrentTime } from "@/shared/hooks/use-current-time";
+import { FadeIn } from "@/shared/motion/components/fade-in";
 
 import { FOOTER_LOCATION, FOOTER_TIMEZONE } from "./footer.constants";
 

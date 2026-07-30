@@ -1,0 +1,7 @@
+{
+  "back": "Back",
+  "searchLabel": "Search",
+  "searchPlaceholder": "Search...",
+  "clearLabel": "Clear search",
+  "noMatchFor": "No results for \"{query}\""
+}

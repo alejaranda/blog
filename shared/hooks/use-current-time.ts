@@ -7,10 +7,7 @@ type UseCurrentTimeOptions = {
   updateIntervalMs?: number;
 };
 
-export function useCurrentTime({
-  timeZone,
-  updateIntervalMs = 1000,
-}: UseCurrentTimeOptions) {
+export function useCurrentTime({ timeZone, updateIntervalMs = 1000 }: UseCurrentTimeOptions) {
   const [time, setTime] = useState<Date | null>(null);
 
   useEffect(() => {
