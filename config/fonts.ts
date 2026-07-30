@@ -10,7 +10,10 @@ export const sfPro = localFont({
 });
 
 export const sfMono = localFont({
-  src: [{ path: "../assets/fonts/sf-mono/regular.woff2", weight: "400", style: "normal" }],
+  src: [
+    { path: "../assets/fonts/sf-mono/regular.woff2", weight: "400", style: "normal" },
+    { path: "../assets/fonts/sf-mono/bold.woff2", weight: "700", style: "normal" },
+  ],
   variable: "--font-sf-mono",
   display: "swap",
 });

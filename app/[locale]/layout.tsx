@@ -5,15 +5,14 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
 import { sfMono, sfPro } from "@/config/fonts";
-import { metadata } from "@/config/metadata";
-import { personJsonLd } from "@/config/structured-data";
 
 import { routing } from "@/i18n/routing";
 
 import { cn } from "@/shared/lib/cn";
 import { Providers } from "@/shared/providers/providers";
-import { JsonLd } from "@/shared/ui/json-ld";
 import "../globals.css";
+
+import { JsonLd, metadata, personJsonLd } from "@/shared/seo";
 
 export { metadata };
 
