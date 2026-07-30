@@ -11,6 +11,7 @@ export const MOTION_TAGS = {
   ul: motion.ul,
   li: motion.li,
   p: motion.p,
+  footer: motion.footer,
 } as const;
 
 export type MotionTagName = keyof typeof MOTION_TAGS;
