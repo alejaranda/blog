@@ -1,3 +1,3 @@
 export { JsonLd } from "./json-ld";
 export { metadata } from "./metadata";
-export { personJsonLd, blogPostingJsonLd, websiteJsonLd } from "./structured-data";
+export { blogPostingJsonLd, personJsonLd, websiteJsonLd } from "./structured-data";

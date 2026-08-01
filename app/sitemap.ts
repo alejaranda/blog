@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 
 import { site } from "@/config/site";
+
 import { routing } from "@/i18n/routing";
+
 import { getAllPosts } from "@/domains/writing/lib/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {

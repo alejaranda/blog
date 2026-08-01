@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
-import { routing } from "@/i18n/routing";
 import { site } from "@/config/site";
+
+import { routing } from "@/i18n/routing";
 
 import { getAllPosts, getPostBySlug } from "@/domains/writing/lib/posts";
 import { PostView } from "@/domains/writing/post/post-view";

@@ -4,12 +4,12 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { formatDate } from "@/shared/lib/date";
 import { FadeIn } from "@/shared/motion/components/fade-in";
+import { blogPostingJsonLd, JsonLd } from "@/shared/seo";
 
 import { rehypePlugins, remarkPlugins } from "../lib/plugins";
 import { getPostBySlug } from "../lib/posts";
 import { mdxComponents } from "./internal/mdx-components";
 import { PostBackLink } from "./internal/post-back-link";
-import { JsonLd, blogPostingJsonLd } from "@/shared/seo";
 
 type PostViewProps = {
   locale: string;

@@ -1,5 +1,6 @@
-import type { JsonObject } from "@/shared/seo/json-ld";
 import type { Post } from "@/domains/writing/lib/post";
+
+import type { JsonObject } from "@/shared/seo/json-ld";
 
 import { site } from "../../config/site";
 
