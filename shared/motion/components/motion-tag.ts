@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 export const MOTION_TAGS = {
   div: motion.div,
   span: motion.span,
+  nav: motion.nav,
   header: motion.header,
   main: motion.main,
   section: motion.section,

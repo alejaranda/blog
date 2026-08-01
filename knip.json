@@ -12,6 +12,5 @@
     "exports": "warn",
     "types": "warn",
     "duplicates": "warn"
-  },
-  "ignore": ["shared/ui/theme-switcher.tsx"]
+  }
 }

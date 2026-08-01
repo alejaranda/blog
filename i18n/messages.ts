@@ -7,6 +7,8 @@ import writingEs from "@/domains/writing/messages/es.json";
 
 import contentListEn from "@/shared/ui/content-list/messages/en.json";
 import contentListEs from "@/shared/ui/content-list/messages/es.json";
+import dockEn from "@/shared/ui/dock/messages/en.json";
+import dockEs from "@/shared/ui/dock/messages/es.json";
 import listPageEn from "@/shared/ui/list-page/messages/en.json";
 import listPageEs from "@/shared/ui/list-page/messages/es.json";
 
@@ -20,6 +22,7 @@ export const messages = {
     shared: {
       contentList: contentListEn,
       listPage: listPageEn,
+      dock: dockEn,
     },
   },
   es: {
@@ -31,6 +34,7 @@ export const messages = {
     shared: {
       contentList: contentListEs,
       listPage: listPageEs,
+      dock: dockEs,
     },
   },
 } as const;

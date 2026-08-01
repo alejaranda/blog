@@ -1,0 +1,42 @@
+{
+  "command": {
+    "label": "Menú de comandos",
+    "placeholder": "Escribe un comando o busca...",
+    "empty": "Sin resultados.",
+    "search": "Buscar",
+    "current": "Actual",
+    "navigate": "Navegar",
+    "select": "Seleccionar"
+  },
+  "groups": {
+    "navigation": "Navegación",
+    "theme": "Tema",
+    "language": "Idioma"
+  },
+  "actions": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "writing": "Escritos"
+  },
+  "theme": {
+    "menu": "Menú de tema",
+    "current": "Tema actual: {theme}"
+  },
+  "language": {
+    "switch": "Cambiar a {locale}",
+    "current": "Idioma actual: {locale}"
+  },
+  "aria": {
+    "preferences": "Preferencias",
+    "openCommand": "Abrir menú de comandos",
+    "commandMenu": "Menú de comandos",
+    "chooseTheme": "Elegir tema"
+  },
+  "footer": {
+    "navigate": "Navegar",
+    "select": "Seleccionar"
+  },
+  "tooltip": {
+    "search": "Buscar ⌘K"
+  }
+}

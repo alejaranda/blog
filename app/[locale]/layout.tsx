@@ -13,6 +13,7 @@ import { Providers } from "@/shared/providers/providers";
 import "../globals.css";
 
 import { JsonLd, metadata, personJsonLd } from "@/shared/seo";
+import { Dock } from "@/shared/ui/dock/dock";
 
 export { metadata };
 
@@ -40,7 +41,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <JsonLd data={personJsonLd} />
 
         <NextIntlClientProvider>
-          <Providers>{children}</Providers>
+          <Providers>
+            {children}
+            <Dock />
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>

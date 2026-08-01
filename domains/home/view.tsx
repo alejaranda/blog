@@ -1,5 +1,4 @@
 import { Container } from "@/shared/ui/container";
-import { ThemeSwitcher } from "@/shared/ui/theme-switcher";
 
 import type { ActivityItemsByCategory } from "./content/activity";
 import { SOCIAL_LINKS } from "./content/social-links";
@@ -21,7 +20,6 @@ export function HomePage({ activityItemsByCategory }: Props) {
       <SocialLinks links={SOCIAL_LINKS} />
       <Activity itemsByCategory={activityItemsByCategory} />
       <Footer />
-      <ThemeSwitcher />
     </Container>
   );
 }
