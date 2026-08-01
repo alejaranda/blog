@@ -12,7 +12,7 @@ import { cn } from "@/shared/lib/cn";
 import { Providers } from "@/shared/providers/providers";
 import "../globals.css";
 
-import { JsonLd, metadata, personJsonLd } from "@/shared/seo";
+import { JsonLd, metadata, personJsonLd, websiteJsonLd } from "@/shared/seo";
 import { Dock } from "@/shared/ui/dock/dock";
 
 export { metadata };
@@ -39,6 +39,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale} className={cn(sfPro.variable, sfMono.variable)} suppressHydrationWarning>
       <body>
         <JsonLd data={personJsonLd} />
+        <JsonLd data={websiteJsonLd} />
 
         <NextIntlClientProvider>
           <Providers>
